@@ -26,15 +26,6 @@ class Lasso:
         self.intercept_ = None
 
     def _soft_threshold(self, x, lambda_):
-        """_summary_
-
-        Args:
-            x (_type_): _description_
-            lambda_ (_type_): _description_
-
-        Returns:
-            _type_: _description_
-        """
         return np.sign(x) * np.maximum(np.abs(x) - lambda_, 0)
 
     def _update_coef(self, X, y, L):
